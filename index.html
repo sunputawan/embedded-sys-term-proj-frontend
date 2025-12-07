@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Temperature Monitor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <h1 class="title">Temperature Monitor</h1>
+      <p class="subtitle">Firebase Realtime Database</p>
+
+      <!-- Temperature -->
+      <div class="temp-display">
+        <span id="temp-value">--</span>
+        <span class="unit">°C</span>
+      </div>
+      <p id="status" class="status">Connecting...</p>
+      <p id="updated-time" class="updated-time">Last update: —</p>
+
+      <hr class="divider" />
+
+      <!-- Threshold section -->
+      <section class="section">
+        <h2 class="section-title">Threshold </h2>
+        <form id="threshold-form" class="row">
+          <label class="field">
+            <span>Threshold (°C)</span>
+            <input
+              id="threshold-input"
+              type="number"
+              min="-50"
+              max="150"
+              step="0.1"
+              placeholder="25"
+            />
+          </label>
+          <button type="submit" class="btn">Save</button>
+        </form>
+        <p id="threshold-status" class="hint"></p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- LED RGB section -->
+      <section class="section">
+        <h2 class="section-title">LED Colors</h2>
+
+        <div class="led-group">
+          <div class="led-header">
+            <span>Normal Color</span>
+            <div id="normal-preview" class="color-preview"></div>
+          </div>
+          <form id="normal-form" class="row rgb-row">
+            <label class="field small">
+              <span>R</span>
+              <input id="normal-r" type="number" min="0" max="1000" />
+            </label>
+            <label class="field small">
+              <span>G</span>
+              <input id="normal-g" type="number" min="0" max="1000" />
+            </label>
+            <label class="field small">
+              <span>B</span>
+              <input id="normal-b" type="number" min="0" max="1000" />
+            </label>
+            <button type="submit" class="btn small">Save</button>
+          </form>
+        </div>
+
+        <div class="led-group">
+          <div class="led-header">
+            <span>Alert Color</span>
+            <div id="alert-preview" class="color-preview"></div>
+          </div>
+          <form id="alert-form" class="row rgb-row">
+            <label class="field small">
+              <span>R</span>
+              <input id="alert-r" type="number" min="0" max="1000" />
+            </label>
+            <label class="field small">
+              <span>G</span>
+              <input id="alert-g" type="number" min="0" max="1000" />
+            </label>
+            <label class="field small">
+              <span>B</span>
+              <input id="alert-b" type="number" min="0" max="1000" />
+            </label>
+            <button type="submit" class="btn small">Save</button>
+          </form>
+        </div>
+
+        <p id="rgb-status" class="hint"></p>
+      </section>
+    </div>
+  </div>
+
+  <!-- main script -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
