@@ -1,9 +1,11 @@
 export const firebaseConfig = {
-  apiKey: window.env.API_KEY,
-  authDomain: window.env.AUTH_DOMAIN,
-  databaseURL: window.env.DB_URL,
-  projectId: window.env.PROJECT_ID,
-  storageBucket: window.env.STORAGE_BUCKET,
-  messagingSenderId: window.env.MSG_SENDER_ID,
-  appId: window.env.APP_ID,
+  apiKey: "AIzaSyCSy8krZST2SZLPT5uqkednpKoFm5Bm3ps",
+  authDomain: "embeded-42a71.firebaseapp.com",
+  databaseURL:
+    "https://embeded-42a71-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "embeded-42a71",
+  storageBucket: "embeded-42a71.appspot.com",
+  messagingSenderId: "000000000",
+  appId: "1:000000000:web:00000000",
 };
+
