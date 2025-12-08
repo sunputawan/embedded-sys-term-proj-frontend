@@ -1,4 +1,4 @@
-// Import Firebase SDK (ES Modules from CDN)
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
   getDatabase,
@@ -8,10 +8,10 @@ import {
   update,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-// === Firebase Config ===
+
 import {firebaseConfig} from "./firebase-config.js"
 
-// DOM elements
+
 const tempValueEl = document.getElementById("temp-value");
 const statusEl = document.getElementById("status");
 const updatedTimeEl = document.getElementById("updated-time");
@@ -33,7 +33,7 @@ const alertREl = document.getElementById("alert-r");
 const alertGEl = document.getElementById("alert-g");
 const alertBEl = document.getElementById("alert-b");
 
-// Initialize Firebase
+
 let db;
 
 try {
@@ -45,7 +45,7 @@ try {
   statusEl.textContent = "Failed to connect to Firebase";
 }
 
-// Helper: clamp 0–255
+
 function clamp255(n) {
   n = Number(n);
   if (Number.isNaN(n)) return 0;
@@ -58,7 +58,7 @@ function updatePreview(box, r, g, b) {
   )}, ${clamp255(b)})`;
 }
 
-// ========= Realtime listeners =========
+
 if (db) {
   // 1) Temperature
   const tempRef = ref(db, "sensor/temperature");
@@ -134,8 +134,6 @@ if (db) {
   );
 }
 
-// ========= Form handlers =========
-
 // Save threshold
 if (thresholdForm && db) {
   thresholdForm.addEventListener("submit", async (e) => {
@@ -161,7 +159,6 @@ if (thresholdForm && db) {
   });
 }
 
-// Save normal RGB
 if (normalForm && db) {
   normalForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -185,7 +182,6 @@ if (normalForm && db) {
   });
 }
 
-// Save alert RGB
 if (alertForm && db) {
   alertForm.addEventListener("submit", async (e) => {
     e.preventDefault();
