@@ -9,7 +9,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 // === Firebase Config ===
-import {firebaseConfig} from "./config.js"
+import {firebaseConfig} from "./firebase-config.js"
 
 // DOM elements
 const tempValueEl = document.getElementById("temp-value");
